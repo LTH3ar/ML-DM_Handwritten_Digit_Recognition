@@ -1,6 +1,18 @@
 import os
 import joblib
 import cv2
+from os import system, name
+
+# define our clear function
+def clear():
+ 
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+ 
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')
 
 # load the model
 model = joblib.load("model/digit_recognizer(0.9354838)")
@@ -30,8 +42,15 @@ def open_image(img_path):
 
 # scan local folder for images
 dirList = os.listdir("test_data")
+test_lst = []
 for img_path in dirList:
-    print(img_path, open_image("test_data/" + img_path))
+    result = open_image("test_data/" + img_path)
+    test_lst.append(str(f"{img_path} Output: {result}"))
+
+clear()
+
+for result in test_lst:
+    print(result)
 
 
 
