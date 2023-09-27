@@ -7,6 +7,10 @@ import joblib
 from sklearn.svm import SVC
 from sklearn import metrics
 
+# check if folder model exists
+import os
+if not os.path.exists("model"):
+    os.mkdir("model")
 
 # Load the dataset
 data = pd.read_csv('dataset.csv')
