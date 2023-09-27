@@ -7,7 +7,7 @@ from PIL import Image, ImageTk
 
 # a simple GUI for the digit recognizer
 # load the model
-model = joblib.load("model/digit_recognizer(0.90322)")
+model = joblib.load("model/digit_recognizer(0.9354838)")
 
 # create a window
 window = tk.Tk()
