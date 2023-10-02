@@ -39,14 +39,14 @@ run_count = 0
 
 
 # run the model until the accuracy is greater than 90%
-while acc_score < 0.91 and run_count < 134:
+while acc_score < 0.9 and run_count < 12:
 
     # Split the dataset into training and testing sets
     train_x, test_x, train_y, test_y = train_test_split(X, Y, test_size=0.2)
 
     # Create the model
+    # using support vector classifier from scikit-learn applied OvR strategy to handle multiclass classification
     classifier = SVC(kernel="linear", random_state=6)
-
     classifier.fit(train_x,train_y)
 
     prediction=classifier.predict(test_x)

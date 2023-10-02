@@ -23,6 +23,7 @@ for label in range(10):
         data.append(label)
 
         # Flatten the 280x280 image into a 1D array
+        # converts pixel values to 0 or 1 based on a threshold of 100
         for pixel_value in roi.ravel():
             if pixel_value > 100:
                 pixel_value = 1
